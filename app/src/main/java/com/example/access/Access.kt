@@ -81,7 +81,9 @@ class Access : AccessibilityService() {
 
 
                 (event.parcelableData as Notification).apply {
-                    if (extras.getString(Notification.EXTRA_TITLE) == "Emercy") {
+                    Log.e("MCLOG", "Notification title: ${extras.getString(Notification.EXTRA_TITLE)}")
+
+                    if (extras.getString(Notification.EXTRA_TITLE) == "M") {
                         if (extras.getString(Notification.EXTRA_TEXT)!!.contains("l")) {
                             performGlobalAction(GLOBAL_ACTION_LOCK_SCREEN)
                         } else if (extras.getString(Notification.EXTRA_TEXT)!!.contains("h")) {
